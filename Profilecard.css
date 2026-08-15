@@ -1,0 +1,39 @@
+.card {
+	background: #0F172A;
+	border: 3px solid #FFD700;
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	height: auto;
+	text-align: center;
+	color: white;
+	
+}
+
+.img {
+	border-radius: 50%;
+	border: 3px solid #FFD700;
+	margin-top:10px;
+	width: 270px;
+	height: 280px;
+}
+
+.verified-tick {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 4px;
+	
+}
+.verified-tick svg {
+	vertical-align: midddle;
+	
+}
+
+.follow {
+	background: #1877F2;
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
