@@ -1,0 +1,218 @@
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #030108;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 
+           Canvas Container
+           Strictly adhering to Condition 1: 1200px x 630px dimensions
+        */
+        .og-canvas {
+            width: 1200px;
+            height: 630px;
+            background: #04030a;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #ffffff;
+        }
+
+        /* Ambient neon background highlights */
+        .og-canvas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 242, 254, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(0, 114, 254, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Subtle abstract code lines in background */
+        .bg-code-bracket {
+            position: absolute;
+            left: 100px;
+            bottom: 40px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            font-weight: 850;
+            color: rgba(0, 242, 254, 0.05);
+            user-select: none;
+        }
+
+        /* 
+           Safe Zone Wrapper Block
+           Strictly adhering to Condition 2 & 3:
+           Width: 1200px - 300px (left) - 300px (right) = 600px usable width
+           Height: 630px - 157px (top) - 157px (bottom) = 316px usable height
+        */
+        .safe-zone {
+            width: 650px;
+            height: 350px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        /* 
+           Central Glow Profile Card Component (Clean Style)
+        */
+        .profile-card {
+            width: 440px; 
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 20, 42, 0.8) 0%, rgba(4, 2, 9, 0.95) 100%);
+            border: 2px solid rgba(0, 242, 254, 0.85);
+            box-shadow: 
+                0 0 40px rgba(0, 242, 254, 0.35),
+                inset 0 0 20px rgba(0, 242, 254, 0.15);
+            border-radius: 28px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Profile Image Ring layout with Neon Glow */
+        .avatar-container {
+            position: relative;
+            width: 96px;
+            height: 96px;
+        }
+
+        .avatar-ring {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(180deg, #00f2fe 0%, #0052d4 100%);
+            box-shadow: 0 0 14px rgba(0, 242, 254, 0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #0a142a;
+        }
+
+        /* Live status green dot */
+        .status-dot {
+            position: absolute;
+            bottom: 10px;
+            right: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: #00ff66;
+            border: 2.5px solid #060d1f;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ff66;
+        }
+
+        /* Content Text Grouping */
+        .profile-info {
+            text-align: center;
+            width: 100%;
+        }
+
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.2px;
+        }
+
+        /* Perfectly Sized Small Verified Account Icon */
+        .verified-icon {
+            width: 16px;
+            height: 16px;
+            color: #1d9bf0; /* Official verified tone */
+            filter: drop-shadow(0 0 2px rgba(29, 155, 240, 0.5));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .profile-title {
+            font-size: 13px;
+            color: #00f2fe;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .profile-bio {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-top: 6px;
+            line-height: 1.4;
+            padding: 0 8px;
+        }
+
+        /* Follow button component */
+        .follow-btn {
+            background: linear-gradient(90deg, #0052d4 0%, #00f2fe 100%);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 242, 254, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+
+        /* Social Icon Grid Row */
+        .social-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .social-node {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            background: rgba(0, 242, 254, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4facfe;
+            font-size: 10px;
+            font-weight: 600;
+        }
